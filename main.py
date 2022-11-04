@@ -66,14 +66,8 @@ def inlinekeyboard(update, context):
     photo='https://www.simplilearn.com/ice9/free_resources_article_thumb/Types_of_Artificial_Intelligence.jpg'
     
     bot.sendPhoto(chat_id, photo=photo, reply_markup = keyboard)
-# def count (update,context):
-    chat_id = update.message.chat.id
-    text = update.message.text
-    bot = context.bot
+
     
-
-    bot.sendMessage(chat_id,)
-
 def callback_inline(update, context):
     query = update.callback_query
     callback_data = query.message.reply_markup.inline_keyboard[0]
@@ -92,7 +86,6 @@ updater = Updater("5643654386:AAGaxNP-8Kkwzi8Ko047p0BZBd3t6a0eIu4")
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(MessageHandler(Filters.text('Inline'), inlinekeyboard))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, echo))
-# updater.dispatcher.add_handler(MessageHandler(Filters.text,count))
 updater.dispatcher.add_handler(CallbackQueryHandler(callback_inline,pattern='like'))
 updater.dispatcher.add_handler(CallbackQueryHandler(callback_inline,pattern='dislike'))
 updater.start_polling()
