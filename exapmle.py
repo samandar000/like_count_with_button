@@ -7,12 +7,13 @@ def echo (update,context):
     f = open('data.json').read()
     data = json.loads(f)
     
-    like = data.get('LIKE')
-    dislike = data.get('DISLIKE')
+    like = data.get({'LIKE':0})
+    dislike = data.get({'DISLIKE':0})
     if text == '👍':
         like+=1
     if text == '👎':
         dislike+=1
+    
     
     data['LIKE'] = like
     data['DISLIKE'] = dislike

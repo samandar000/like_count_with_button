@@ -46,7 +46,7 @@ def echo(update, context):
     f = open('data.json','w')
     f.write(data)
     f.close()
-    if text != '👎' and '👍':
+    if text != '👎' and text != '👍':
         bot.sendMessage(chat_id, text,reply_markup=reply_markup)
     else:
         bot.sendMessage(chat_id,f"👍:{like}\n\n👎:{dislike}")
